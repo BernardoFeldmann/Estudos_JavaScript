@@ -35,13 +35,14 @@
 <body>
     <h1>Brasileiro ou Estrangeiro</h1>
     <p id="p1"><strong>Digite em qual país você nasceu = </strong><input type="text" name="paísDigitado"
-            id="paísDigitado"> <input type="button" value="verificar" onclick="cidadania()" id="button"></p>
+            id="paísDigitado"> <input type="button" value="verificar" onclick="cidadania()"id="button"></p>
     <div id="resultado">
         <p id="p2">seu resultado aparecerá aqui >>></p>
 
     </div>
     <script>
         function cidadania() {
+
             var nomePaís = document.querySelector('input#paísDigitado') // esta var recebe país digitado no input;
 
             var resultado = document.querySelector('div#resultado') // esta var recebe a div resultado que o texto irá ser substituído pelo innerHTML;
