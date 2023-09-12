@@ -3,7 +3,7 @@ function verificar() {
     var ano = data.getFullYear() // PEGAR O ANO ATUAL COM OS 4 DÍGITOS
     var anonasc = document.getElementById('txtano')  // ANO DE NASCIMENTO DIGITADO
     var res = document.querySelector('div#res')
-    if (anonasc.value.length == 0 || Number(anonasc.value) > ano) {  // SE NÃO FOR DIGITADO NADA OU O ANO INSERIDO FOR MAIOR QUE O ATUAL...
+    if (anonasc.value.length == 0 || Number(anonasc.value) > ano) {  /// SE NÃO FOR DIGITADO NADA OU O ANO INSERIDO FOR MAIOR QUE O ATUAL...
         window.alert('[ERRO] Verifique os dados e tente novamente!')
     } else {
         var fsex = document.getElementsByName('radsex') // var dos botoes de feminino ou masculino
