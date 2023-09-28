@@ -1,3 +1,3 @@
-var num = [5,6,9]
-num[3] = 4
+var num = [5,6,9,10,12]
+num.sort
 console.log(num)
