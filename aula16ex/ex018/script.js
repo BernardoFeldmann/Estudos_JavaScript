@@ -25,7 +25,36 @@ function adicionar() {
         let item = document.createElement('option')
         item.text = `Valor ${num.value} adicionado.`
         lista.appendChild(item)
+        res.innerHTML = '' // limpa a função finalizar e retorna a inserir valores na lista
     } else {
         window.alert('Valor inválido ou já encontrado na lista.')
+    }
+    num.value = ''  // apaga o numero da caixa de texto para que seja inserido um novo
+    num.focus()  // permanece o cursor na caixa de inserção de valores para que não tenha que clicar para digitar um novo número
+}
+
+function finalizar() {
+    if (valores.length == 0) {   // se a lista valores estiver 'zerada'...
+        alert('Adicione valores antes de finalizar')
+    } else {
+        var total = valores.length
+        var maior = valores[0]
+        var menor = valores[0]
+        var soma = 0
+        var media = 0
+        for(var pos in valores) {  // para cada posição em valores
+            soma += valores[pos]  // vai somando os valores das posições
+            if (valores[pos] > maior) // se o valor na posição for maior que o maior valor atual...
+            maior = valores[pos]     // ...ele passa a ser o maior valor atual
+            if (valores[pos] < menor)  // se o valor da posição for menor que o menor valor...
+            menor  = valores[pos] // ...o mesmo passa a ser o menor valor atual
+        }
+        media = soma/total  // media = é a soma divido pelo total de numeros da lista.
+        res.innerHTML = '' 
+        res.innerHTML += `<p>Ao todo, temos ${total} números cadastrados, são eles: ${valores}.</p>`
+        res.innerHTML += `<p>O maior valor informado é ${maior}.</p>`
+        res.innerHTML += `<p>O menor valor informado é ${menor}.</p>`
+        res.innerHTML += `<p>A soma dos valores da lista é ${soma}.</p>`
+        res.innerHTML += `<p>A média dos valores é ${media}</p>`
     }
 }
